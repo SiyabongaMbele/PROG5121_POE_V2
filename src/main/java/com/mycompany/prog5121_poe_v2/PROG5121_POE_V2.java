@@ -1,16 +1,50 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
+package com.mycompany.prog5121_poe_v2;
 
-package com.mycompany.prog5121_poe_V2;
+import java.util.Scanner;
 
-/**
- *
- * @author Student
- */
 public class PROG5121_POE_V2 {
-
+    
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("===== USER REGISTRATION =====");
+        
+        System.out.print("Enter Username: ");
+        String username = input.nextLine();
+        
+        System.out.print("Enter Password: ");
+        String password = input.nextLine();
+        
+        System.out.print("Enter Cell Number: ");
+        String cellNumber = input.nextLine();
+        
+        Login user = new Login(username, password, cellNumber);
+        
+        System.out.println(user.registerUser());
+        
+        System.out.println("\n===== LOGIN =====");
+        
+        System.out.println("Enter First Name: ");
+        String firstName = input.nextLine();
+        
+        System.out.print("Enter Last Name: ");
+        String lastName = input.nextLine();
+        
+        System.out.print("Enter Username: ");
+        String loginUsername = input.nextLine();
+        
+        System.out.print("Enter Password: ");
+        String loginPassword = input.nextLine();
+        
+        boolean loginSuccess =
+                user.loginUser(loginUsername, loginPassword);
+        
+        System.out.println(
+                user.returnLoginStatus(
+                        loginSuccess,
+                        firstName,
+                        lastName)
+        );
     }
 }
