@@ -45,6 +45,39 @@ public class PROG5121_POE_V2 {
                         loginSuccess,
                         firstName,
                         lastName)
-        );
-    }
+);
+        
+if(loginSuccess) {
+    
+    System.out.println("""
+    1. Send Messages
+    2. Show Recently Sent Messages
+    3. Quit
+    """);
+
+    int choice =
+Integer.parseInt(input.nextLine());
+    
+switch (choice) {
+    
+    case 1:
+        System.out.println("Send Message Selected"); 
+        break;
+        
+    case 2:
+        System.out.println("Coming Soon"); 
+        break;
+        
+    case 3:
+        System.out.println("Goodbye."); 
+        break;
+    
+    default:
+        System.out.println("Invalid Option");
+}
+
+}
+
+}
+
 }
