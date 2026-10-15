@@ -28,4 +28,20 @@ public class Message {
         return
 recipient.matches("\\+27\\d{9}$");
     }
+
+    public String createMessageHash() {
+        
+        String firstWord = message.split(" ")[0];
+        String lastWord = message.split(" ")[message.split(" "
+        ).length - 1];
+        
+        messageHash = 
+                messageID.substring(0, 2)
+                + ":" + messageNumber
+                + ":" + firstWord.toUpperCase()
+                + lastWord.toUpperCase();
+        
+        return messageHash;
+}
+        
 }
