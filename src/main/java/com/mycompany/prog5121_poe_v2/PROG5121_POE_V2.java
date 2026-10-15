@@ -71,6 +71,15 @@ switch (choice) {
             System.out.println(
                       "\nMessage Number: " + i
             );
+            Message msg = 
+                    new Message("12345678",
+                    i,
+                    "+27831234567",
+                    "Hello");
+            
+            System.out.println("Message ID Valid: "
+            + msg.checkMessageID()
+            );
         }
         
         break;
