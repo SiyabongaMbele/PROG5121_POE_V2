@@ -4,7 +4,7 @@ public class Message {
     
     private String messageID;
     private int messageNumber;
-    private String receipt;
+    private String recipient;
     private String message;
     private String messageHash;
     
@@ -15,7 +15,7 @@ public class Message {
         
         this.messageID = messageID;
         this.messageNumber = messageNumber;
-        this.receipt = recipient;
+        this.recipient = recipient;
         this.message = message;
     }
     
@@ -24,4 +24,8 @@ public class Message {
         return messageID.length() <= 10;
     }
     
+    public boolean checkRecipientCell() {
+        return
+recipient.matches("\\+27\\d{9}$");
+    }
 }
