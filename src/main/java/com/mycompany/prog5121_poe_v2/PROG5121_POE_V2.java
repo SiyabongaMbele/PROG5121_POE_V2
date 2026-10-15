@@ -61,7 +61,18 @@ Integer.parseInt(input.nextLine());
 switch (choice) {
     
     case 1:
-        System.out.println("Send Message Selected"); 
+        System.out.println("How Many Messages would You Like to Send? ");
+        
+        int numberOfMessages = 
+                Integer.parseInt(input.nextLine());
+        
+        for (int i = 1; i <= numberOfMessages; i++) {
+            
+            System.out.println(
+                      "\nMessage Number: " + i
+            );
+        }
+        
         break;
         
     case 2:
