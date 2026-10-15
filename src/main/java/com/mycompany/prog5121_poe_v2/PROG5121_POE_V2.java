@@ -71,11 +71,25 @@ switch (choice) {
             System.out.println(
                       "\nMessage Number: " + i
             );
+            
+        System.out.print("Enter Recipient Number: ");
+        String recipientNumber = input.nextLine();
+        
+        System.out.println("Enter Message: ");
+        String messageText = input.nextLine();
+        
+        if (messageText.length() > 250) {
+            
+            System.out.println("Please Enter a Message of Less Than 250 characters."
+            );
+            
+            continue;
+        }
             Message msg = 
                     new Message("1234567890",
                     i,
-                    "+27831234567",
-                    "Hello World");
+                    recipientNumber,
+                    messageText);
             
             System.out.println("Message ID Valid: "
             + msg.checkMessageID()
