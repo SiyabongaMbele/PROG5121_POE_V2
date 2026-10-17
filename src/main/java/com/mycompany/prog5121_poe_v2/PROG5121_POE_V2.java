@@ -31,9 +31,8 @@ public class PROG5121_POE_V2 {
                 && user.checkPasswordComplexity()
                 && user.checkCellPhoneNumber();
         
-        if (registrationMessage.equals(
-                "User Has Been Successfully Registered.")) {
-        
+        if (registrationSuccess) {
+           
         System.out.println("\n===== LOGIN =====");
         
         System.out.println("Enter First Name: ");
@@ -268,5 +267,5 @@ switch (choice) {
  }
 
   }
-   
+    
 }
