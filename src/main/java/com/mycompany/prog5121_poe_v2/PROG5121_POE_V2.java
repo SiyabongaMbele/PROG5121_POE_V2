@@ -162,6 +162,11 @@ switch (choice) {
                     "\n===== RECENTLY SENT MESSAGES ====="
             );
             
+            System.out.println(
+                    "Total Messages Sent: "
+                    + Message.sentMessages.size()
+            );
+            
             for (int i = 0;
                     i < Message.sentMessages.size();
                     i++) {
