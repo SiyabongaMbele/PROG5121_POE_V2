@@ -48,6 +48,9 @@ public class PROG5121_POE_V2 {
 );
         
 if(loginSuccess) {
+   boolean exit = false;
+   
+   while (!exit) {
     
     System.out.println("""
     1. Send Messages
@@ -72,8 +75,29 @@ switch (choice) {
                       "\nMessage Number: " + i
             );
             
-        System.out.print("Enter Recipient Number: ");
-        String recipientNumber = input.nextLine();
+        String recipientNumber;
+        Message temp;
+        
+        do {
+            
+            System.out.print("Enter Recipient Number: ");
+            recipientNumber = input.nextLine();
+            
+            temp = new Message(
+                    "1234567890",
+                    i,
+                    recipientNumber,
+                    ""
+            );
+            
+            if (!temp.checkRecipientCell()) {
+                
+                System.out.println(""
+                        + "Cellphone Number Incorrected Formatted. Please Try Again."
+                );
+            }
+            
+        } while (!temp.checkRecipientCell());
         
         System.out.println("Enter Message: ");
         String messageText = input.nextLine();
@@ -116,24 +140,63 @@ switch (choice) {
                     "Message Hash: "
                     + msg.createMessageHash()
             );
+            
+            System.out.println(
+                    "Message Stored: "
+                    + Message.sentMessages.size()
+            );
         }
         
         break;
         
     case 2:
-        System.out.println("Coming Soon"); 
-        break;
+        if (Message.sentMessages.isEmpty()) {
+            
+            System.out.println(
+                    "No Messages Have Been Sent."
+            );
+            
+        } else {
+            
+            System.out.println(
+                    "\n===== RECENTLY SENT MESSAGES ====="
+            );
+            
+            for (int i = 0;
+                    i < Message.sentMessages.size();
+                    i++) {
+                
+            System.out.println(
+                     "\nRecipient: "
+                     + Message.recipients.get(i)
+                );
+            
+            System.out.println(
+                    "Message: "
+                    + Message.sentMessages.get(i)
+            );
+            
+            System.out.println(
+                    "Hash: "
+                    + Message.messageHashes.get(i)
+            );
+                
+        }
+    }
         
     case 3:
         System.out.println("Goodbye."); 
-        break;
+                        exit = true;
+                        break;
     
     default:
         System.out.println("Invalid Option");
-}
+    }
 
-}
+  }
 
-}
+  }
 
+    }
+    
 }
