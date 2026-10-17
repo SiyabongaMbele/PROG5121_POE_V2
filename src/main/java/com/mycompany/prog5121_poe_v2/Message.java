@@ -1,5 +1,7 @@
 package com.mycompany.prog5121_poe_v2;
 
+import java.util.ArrayList;
+
 public class Message {
     
     private String messageID;
@@ -7,6 +9,15 @@ public class Message {
     private String recipient;
     private String message;
     private String messageHash;
+    
+    public static ArrayList<String> sentMessages = 
+            new ArrayList<>();
+    
+    public static ArrayList<String> recipients = 
+            new ArrayList<>();
+    
+    public static ArrayList<String> messageHashes = 
+            new ArrayList<>();
     
     public Message(String messageID, 
             int messageNumber,

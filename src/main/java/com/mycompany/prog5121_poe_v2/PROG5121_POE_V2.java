@@ -102,6 +102,13 @@ switch (choice) {
                     recipientNumber,
                     messageText);
             
+            Message.sentMessages.add(messageText);
+            
+            Message.recipients.add(recipientNumber);
+            
+            Message.messageHashes.add(msg.createMessageHash()
+            );
+            
             System.out.println("Message ID Valid: "
             + msg.checkMessageID()
             );
