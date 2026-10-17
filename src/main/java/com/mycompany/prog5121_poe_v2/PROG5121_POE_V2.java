@@ -126,6 +126,19 @@ switch (choice) {
                     recipientNumber,
                     messageText);
             
+            System.out.println("""
+            1. Send Message
+            2. Disregard Message
+            3. Store Message To Send Later"""
+            );
+            
+            int action = 
+                    Integer.parseInt(input.nextLine());
+            
+            switch(action) {
+                
+                case 1:
+            
             Message.sentMessages.add(messageText);
             
             Message.recipients.add(recipientNumber);
@@ -133,10 +146,33 @@ switch (choice) {
             Message.messageHashes.add(msg.createMessageHash()
             );
             
-            System.out.println("Message Successfully Sent.");
-        }
+            System.out.println("Message Successfully Sent."
+            );
         
-        break;
+             break;
+        
+        case 2: 
+        
+            System.out.println("Press 0 To Delete Message."
+            );
+            
+            break;
+            
+        case 3:
+        
+            System.out.println("Message Successfully Stored."
+            );
+            
+            break;
+            
+        default: 
+        
+            System.out.println("Invalid Option."
+            );
+            }
+            
+        }
+            
         
     case 2:
         if (Message.sentMessages.isEmpty()) {
