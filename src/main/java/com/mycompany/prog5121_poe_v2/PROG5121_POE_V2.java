@@ -160,6 +160,17 @@ switch (choice) {
             System.out.println("Press 0 To Delete Message."
             );
             
+            int deleteChoice = 
+                    Integer.parseInt(input.nextLine());
+            
+            if (deleteChoice == 0) {
+                
+               Message.disregardedMessages.add(messageText);
+                
+               System.out.println("Message Deleted."
+               );
+        }
+            
             break;
             
         case 3:
