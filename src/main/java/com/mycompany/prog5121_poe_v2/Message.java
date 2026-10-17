@@ -54,5 +54,9 @@ recipient.matches("\\+27\\d{9}$");
         
         return messageHash;
 }
-        
+     
+    public static int getTotalMessagesSent() {
+        return sentMessages.size();
+    }
+    
 }
