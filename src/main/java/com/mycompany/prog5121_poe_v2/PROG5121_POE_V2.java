@@ -121,10 +121,12 @@ switch (choice) {
             continue;
         }
             Message msg = 
-                    new Message("1234567890",
+                    new Message("",
                     i,
                     recipientNumber,
                     messageText);
+            
+            msg.createMessageID();
             
             System.out.println("""
             1. Send Message

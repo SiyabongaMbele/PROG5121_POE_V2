@@ -58,5 +58,12 @@ recipient.matches("\\+27\\d{9}$");
     public static int getTotalMessagesSent() {
         return sentMessages.size();
     }
-    
+    public String createMessageID() {
+        
+        long randomNumber = (long)(Math.random() * 1000000000);
+        
+        messageID = String.valueOf(randomNumber);
+        
+        return messageID;
+    }
 }
