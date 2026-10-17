@@ -223,7 +223,7 @@ switch (choice) {
                     + Message.storedMessages.size()
             );
             
-            System.out.println("Disregarded Messages:"
+            System.out.println("Disregarded Messages: "
                     + Message.disregardedMessages.size()
             );
             
