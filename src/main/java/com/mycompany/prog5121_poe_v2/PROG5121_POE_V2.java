@@ -133,18 +133,7 @@ switch (choice) {
             Message.messageHashes.add(msg.createMessageHash()
             );
             
-            System.out.println("Message ID Valid: "
-            + msg.checkMessageID()
-            );
-            System.out.println(
-                    "Message Hash: "
-                    + msg.createMessageHash()
-            );
-            
-            System.out.println(
-                    "Message Stored: "
-                    + Message.sentMessages.size()
-            );
+            System.out.println("Message Successfully Sent.");
         }
         
         break;
