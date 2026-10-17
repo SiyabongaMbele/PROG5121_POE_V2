@@ -157,7 +157,7 @@ switch (choice) {
         
             Message.disregardedMessages.add(messageText);
             
-            System.out.println("Message Disregarded."
+            System.out.println("Press 0 To Delete Message."
             );
             
             break;
@@ -195,7 +195,15 @@ switch (choice) {
             
             System.out.println(
                     "Total Messages Sent: "
-                    + Message.sentMessages.size()
+                    + Message.getTotalMessagesSent()
+            );
+            
+            System.out.println("Stored Messages: "
+                    + Message.storedMessages.size()
+            );
+            
+            System.out.println("Disregarded Messages:"
+                    + Message.disregardedMessages.size()
             );
             
             for (int i = 0;
@@ -215,10 +223,12 @@ switch (choice) {
             System.out.println(
                     "Hash: "
                     + Message.messageHashes.get(i)
-            );
-                
+            );       
+            
         }
-    }
+    }   
+        
+    break;
         
     case 3:
         System.out.println("Goodbye."); 
@@ -233,6 +243,6 @@ switch (choice) {
 
   }
 
-    }
+ }
     
 }
