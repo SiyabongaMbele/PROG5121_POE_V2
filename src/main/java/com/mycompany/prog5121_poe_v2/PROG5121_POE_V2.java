@@ -21,7 +21,18 @@ public class PROG5121_POE_V2 {
         
         Login user = new Login(username, password, cellNumber);
         
-        System.out.println(user.registerUser());
+        String registrationMessage = 
+                user.registerUser();
+        
+        System.out.println(registrationMessage);
+        
+        boolean registrationSuccess = 
+                user.checkUserName()
+                && user.checkPasswordComplexity()
+                && user.checkCellPhoneNumber();
+        
+        if (registrationMessage.equals(
+                "User Has Been Successfully Registered.")) {
         
         System.out.println("\n===== LOGIN =====");
         
@@ -255,5 +266,7 @@ switch (choice) {
   }
 
  }
-    
+
+  }
+   
 }
