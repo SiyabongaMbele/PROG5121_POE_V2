@@ -155,13 +155,17 @@ switch (choice) {
         
         case 2: 
         
-            System.out.println("Press 0 To Delete Message."
+            Message.disregardedMessages.add(messageText);
+            
+            System.out.println("Message Disregarded."
             );
             
             break;
             
         case 3:
         
+            Message.storedMessages.add(messageText);
+            
             System.out.println("Message Successfully Stored."
             );
             

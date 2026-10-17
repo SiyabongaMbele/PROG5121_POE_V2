@@ -66,4 +66,10 @@ recipient.matches("\\+27\\d{9}$");
         
         return messageID;
     }
+    
+    public static ArrayList<String> storedMessages = 
+            new ArrayList<>();
+    
+    public static ArrayList<String> disregardedMessages = 
+            new ArrayList<>();
 }
