@@ -80,6 +80,17 @@ switch (choice) {
         
         if (messageText.length() > 250) {
             
+            System.out.println(
+                    "Message exceeds 250 characters by "
+                    + (messageText.length() - 250)
+                    + " characters."
+            );
+            
+            continue;
+        }
+        
+        if (messageText.length() > 250) {
+            
             System.out.println("Please Enter a Message of Less Than 250 characters."
             );
             
