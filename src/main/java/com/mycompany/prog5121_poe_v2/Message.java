@@ -2,6 +2,8 @@ package com.mycompany.prog5121_poe_v2;
 
 import com.google.gson.Gson;
 
+import java.io.FileWriter;
+
 import java.util.ArrayList;
 
 public class Message {
@@ -113,6 +115,36 @@ recipient.matches("\\+27\\d{9}$");
             gson.toJson("Hello JSON");
 
     System.out.println(json);
+}
+    
+    public static void saveStoredMessagesToJSON() {
+
+    try {
+
+        Gson gson = new Gson();
+
+        FileWriter writer =
+                new FileWriter(
+                        "storedMessages.json"
+                );
+
+        gson.toJson(
+                storedMessages,
+                writer
+        );
+
+        writer.close();
+
+        System.out.println(
+                "Stored messages saved to JSON."
+        );
+
+    } catch (Exception e) {
+
+        System.out.println(
+                "Error saving JSON file."
+        );
+    }
 }
     
 }

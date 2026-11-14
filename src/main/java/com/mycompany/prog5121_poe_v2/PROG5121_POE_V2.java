@@ -61,6 +61,8 @@ if(loginSuccess) {
     
    Message.populatePOETestData();
    
+   Message.saveStoredMessagesToJSON();
+   
    boolean exit = false;
    
    while (!exit) {
