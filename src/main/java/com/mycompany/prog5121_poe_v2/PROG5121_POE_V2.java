@@ -366,6 +366,42 @@ Integer.parseInt(input.nextLine());
     }
 
     break;
+    
+    case 4:
+
+    System.out.print(
+            "Enter Recipient Number: "
+    );
+
+    String recipientSearch =
+            input.nextLine();
+
+    boolean recipientFound = false;
+
+    for (int i = 0;
+            i < Message.recipients.size();
+            i++) {
+
+        if (Message.recipients.get(i)
+                .equals(recipientSearch)) {
+
+            System.out.println(
+                    "Message: "
+                    + Message.sentMessages.get(i)
+            );
+
+            recipientFound = true;
+        }
+    }
+
+    if (!recipientFound) {
+
+        System.out.println(
+                "No messages found for recipient."
+        );
+    }
+
+    break;
                         
     default:
         System.out.println("Invalid Option");
