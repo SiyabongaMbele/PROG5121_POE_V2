@@ -111,16 +111,6 @@ recipient.matches("\\+27\\d{9}$");
         disregardedMessages.add("Yohoooo, I am at your gate."
         );
     }
-
-    public static void testGson() {
-
-    Gson gson = new Gson();
-
-    String json =
-            gson.toJson("Hello JSON");
-
-    System.out.println(json);
-}
     
     public static void saveStoredMessagesToJSON() {
 
