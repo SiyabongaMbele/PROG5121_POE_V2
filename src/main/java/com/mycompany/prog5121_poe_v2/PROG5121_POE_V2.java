@@ -60,7 +60,7 @@ public class PROG5121_POE_V2 {
 if(loginSuccess) {
     
    Message.populatePOETestData();
-    
+   
    boolean exit = false;
    
    while (!exit) {
@@ -309,14 +309,68 @@ Integer.parseInt(input.nextLine());
     
     break;
     
+    case 2:
+
+    String longestMessage = "";
+
+    for (String msg : Message.storedMessages) {
+
+        if (msg.length() > longestMessage.length()) {
+
+            longestMessage = msg;
+        }
     }
+
+    System.out.println(
+            "\n===== LONGEST STORED MESSAGE ====="
+    );
+
+    System.out.println(
+            longestMessage
+    );
+
+    break;
     
+    case 3:
+
+    System.out.print(
+            "Enter Message ID: "
+    );
+
+    String searchID =
+            input.nextLine();
+
+    boolean found = false;
+
+    for (int i = 0;
+            i < Message.messageIDs.size();
+            i++) {
+
+        if (Message.messageIDs.get(i)
+                .equals(searchID)) {
+
+            System.out.println(
+                    "Message: "
+                    + Message.sentMessages.get(i)
+            );
+
+            found = true;
+        }
+    }
+
+    if (!found) {
+
+        System.out.println(
+                "Message ID not found."
+        );
+    }
+
     break;
                         
     default:
         System.out.println("Invalid Option");
     }
-
+}
    }
    
 }
