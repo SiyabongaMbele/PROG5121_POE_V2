@@ -271,8 +271,47 @@ switch (choice) {
     5. Delete By Message Hash
     6. Display Full Report
     """);
+    
+    int storedChoice = 
+            
+Integer.parseInt(input.nextLine());
+    
+    switch (storedChoice)
         
-        break;
+    {
+        case 1:
+            
+    System.out.println(
+        "\n===== STORED MESSAGE CONTACTS ====="
+);
+    
+    for (int i = 0;
+            i <
+            Message.storedMessages.size();
+            i++) {
+        
+        System.out.println("\nSender: Siya Mbele"
+        );
+        
+        System.out.println(
+        "Recipient: "
+        + Message.recipients.get(i %
+                Message.recipients.size()
+        )
+        );
+        
+        System.out.println(
+                 "Stored Message: "
+                +
+        Message.storedMessages.get(i)
+        );
+    }
+    
+    break;
+    
+    }
+    
+    break;
                         
     default:
         System.out.println("Invalid Option");
