@@ -1,5 +1,7 @@
 package com.mycompany.prog5121_poe_v2;
 
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 
 public class Message {
@@ -103,4 +105,14 @@ recipient.matches("\\+27\\d{9}$");
         );
     }
 
+    public static void testGson() {
+
+    Gson gson = new Gson();
+
+    String json =
+            gson.toJson("Hello JSON");
+
+    System.out.println(json);
+}
+    
 }
