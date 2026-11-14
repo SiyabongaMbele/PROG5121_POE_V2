@@ -402,6 +402,53 @@ Integer.parseInt(input.nextLine());
     }
 
     break;
+    
+    case 5:
+
+    System.out.print(
+            "Enter Message Hash: "
+    );
+
+    String hashToDelete =
+            input.nextLine();
+
+    boolean deleted = false;
+
+    for (int i = 0;
+            i < Message.messageHashes.size();
+            i++) {
+
+        if (Message.messageHashes.get(i)
+                .equals(hashToDelete)) {
+
+            Message.messageHashes.remove(i);
+
+            if (i < Message.sentMessages.size()) {
+                Message.sentMessages.remove(i);
+            }
+
+            if (i < Message.recipients.size()) {
+                Message.recipients.remove(i);
+            }
+
+            System.out.println(
+                    "Message deleted successfully."
+            );
+
+            deleted = true;
+
+            break;
+        }
+    }
+
+    if (!deleted) {
+
+        System.out.println(
+                "Message hash not found."
+        );
+    }
+
+    break;
                         
     default:
         System.out.println("Invalid Option");
