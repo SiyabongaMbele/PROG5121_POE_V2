@@ -58,6 +58,9 @@ public class PROG5121_POE_V2 {
 );
         
 if(loginSuccess) {
+    
+   Message.populatePOETestData();
+    
    boolean exit = false;
    
    while (!exit) {

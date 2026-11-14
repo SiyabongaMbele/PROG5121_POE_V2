@@ -19,6 +19,15 @@ public class Message {
     public static ArrayList<String> messageHashes = 
             new ArrayList<>();
     
+    public static ArrayList<String> storedMessages = 
+            new ArrayList<>();
+    
+    public static ArrayList<String> disregardedMessages = 
+            new ArrayList<>();
+    
+    public static ArrayList<String> messageIDs = 
+            new ArrayList<>();
+    
     public Message(String messageID, 
             int messageNumber,
             String recipient,
@@ -65,11 +74,33 @@ recipient.matches("\\+27\\d{9}$");
         messageID = String.valueOf(randomNumber);
         
         return messageID;
+        
     }
-    
-    public static ArrayList<String> storedMessages = 
-            new ArrayList<>();
-    
-    public static ArrayList<String> disregardedMessages = 
-            new ArrayList<>();
+        
+    public static void populatePOETestData() {
+        
+        // Sent Messages
+        sentMessages.add("Did you get the cake?");
+        recipients.add("+278345557896");
+        messageIDs.add("MSG001");
+        messageHashes.add("MS:1:DIDCAKE");
+        
+        sentMessages.add("It is dinner time !");
+        recipients.add("0838884567");
+        messageIDs.add("MSG004");
+        messageHashes.add("MS:4:ITTIME");
+        
+        // Stored Messages
+        storedMessages.add(
+                "Where are you? You are late! I have asked you to be on time."
+        );
+        
+        storedMessages.add("OK, I am leaving without you."
+                );
+        
+        // Disregards Messages
+        disregardedMessages.add("Yohoooo, I am at your gate."
+        );
+    }
+
 }
