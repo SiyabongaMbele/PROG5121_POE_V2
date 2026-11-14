@@ -449,6 +449,41 @@ Integer.parseInt(input.nextLine());
     }
 
     break;
+    
+    case 6:
+        
+        System.out.println(
+        "\n===== FULL MESSAGE REPORT ======"
+        );
+        
+        for (int i = 0;
+                i <
+                Message.sentMessages.size(
+                );
+                i++) {
+            System.out.println(
+            "\nMessage Hash: "
+            +
+            Message.messageHashes.get(i)
+                    );
+            
+            System.out.println(
+            "Recipient: "
+            + Message.recipients.get(i)
+            );
+            
+            System.out.println(
+            "Message: "
+            +
+            Message.sentMessages.get(i)
+            );
+            
+            System.out.println(
+            "-------------------------------------------"
+            );
+        }
+        
+        break;
                         
     default:
         System.out.println("Invalid Option");
