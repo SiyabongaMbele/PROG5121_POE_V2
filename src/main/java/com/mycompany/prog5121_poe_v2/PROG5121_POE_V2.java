@@ -69,6 +69,7 @@ if(loginSuccess) {
     1. Send Messages
     2. Show Recently Sent Messages
     3. Quit
+    4. Stored Mesages
     """);
 
     int choice =
@@ -259,16 +260,30 @@ switch (choice) {
                         exit = true;
                         break;
     
+    case 4:
+        System.out.println("""
+    ===== STORED MESSAGES =====
+
+    1. Display Sender and Recipient
+    2. Display Longest Message
+    3. Search By Message ID
+    4. Search By Recipient
+    5. Delete By Message Hash
+    6. Display Full Report
+    """);
+        
+        break;
+                        
     default:
         System.out.println("Invalid Option");
     }
 
-  }
+   }
+   
+}
 
-  }
-
- }
-
-  }
+        }
+        
+    }
     
 }
