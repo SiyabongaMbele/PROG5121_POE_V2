@@ -2,6 +2,11 @@ package com.mycompany.prog5121_poe_v2;
 
 import com.google.gson.Gson;
 
+import com.google.gson.reflect.TypeToken;
+
+import java.io.FileReader;
+import java.lang.reflect.Type;
+
 import java.io.FileWriter;
 
 import java.util.ArrayList;
@@ -146,5 +151,40 @@ recipient.matches("\\+27\\d{9}$");
         );
     }
 }
+    
+public static void loadStoredMessagesFromJSON() {
+
+    try {
+
+        Gson gson = new Gson();
+
+        Type listType =
+                new TypeToken<ArrayList<String>>() {
+                }.getType();
+
+        FileReader reader =
+                new FileReader(
+                        "storedMessages.json"
+                );
+
+        storedMessages =
+                gson.fromJson(
+                        reader,
+                        listType
+                );
+
+        reader.close();
+
+        System.out.println(
+                "Stored messages loaded from JSON."
+        );
+
+    } catch (Exception e) {
+
+        System.out.println(
+                "Error loading JSON file."
+        );
+    }
+}    
     
 }

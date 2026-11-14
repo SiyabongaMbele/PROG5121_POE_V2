@@ -63,6 +63,8 @@ if(loginSuccess) {
    
    Message.saveStoredMessagesToJSON();
    
+   Message.loadStoredMessagesFromJSON();
+   
    boolean exit = false;
    
    while (!exit) {
